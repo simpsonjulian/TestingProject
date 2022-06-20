@@ -22,5 +22,5 @@ steps:
     git config user.email "simpsonjulian@gmail.com"
     git remote add github git@github.com:simpsonjulian/TestingProject.git
     ssh-keyscan github.com
-    git push -u github main
+    git push github --all
   displayName: 'Run a multi-line script'
