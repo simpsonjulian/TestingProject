@@ -24,5 +24,5 @@ steps:
     ssh-keyscan github.com
     git checkout master
     git branch -M main
-    git push github --all
+    git push github main --all
   displayName: 'Run a multi-line script'
