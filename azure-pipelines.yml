@@ -10,12 +10,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: "SHA256:33FcoA0wB92jAyfVDKdsu0GxdwcpsqcqAMmRWWm6CKM jsimpson@MacBook-Pro.fritz.box"
+    sshKeySecureFile: "ado"
+    sshPublicKey: "foo bar not real"
 
 - script: |
     git config user.name "Julian Simpson"
     git config user.email "simpsonjulian@gmail.com"
-    git remote add github https://github.com/simpsonjulian/TestingProject.git
+    git remote add github git@github.com:simpsonjulian/TestingProject.git
+    ssh-keyscan github.com
     git push -u github main
   displayName: 'Run a multi-line script'
