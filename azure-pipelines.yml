@@ -18,10 +18,13 @@ steps:
     sshPublicKey: "foo bar not real"
 
 - script: |
+    set -x
+    git log -p
+    git checkout main
     git config user.name "Julian Simpson"
     git config user.email "simpsonjulian@gmail.com"
     git remote add github git@github.com:simpsonjulian/TestingProject.git
     ssh-keyscan github.com
-    git checkout main
+
     git push github main
   displayName: 'Run a multi-line script'
