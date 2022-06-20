@@ -22,7 +22,7 @@ steps:
     git config user.email "simpsonjulian@gmail.com"
     git remote add github git@github.com:simpsonjulian/TestingProject.git
     ssh-keyscan github.com
-    git checkout master
+    git branch -a 
     git branch -M main
-    git push github main --all
+    git push github main
   displayName: 'Run a multi-line script'
